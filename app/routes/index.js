@@ -5,7 +5,7 @@ module.exports = {init};
 function init(app,passport){
 
 	app.route('/').get(function(req,res){
-		res.render(path + '/views/index.pug');
+		res.render(path + '/views/layout.pug');
 	})
 
 }

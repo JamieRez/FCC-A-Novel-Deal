@@ -2,3 +2,131 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+
+body{
+  background-color: #dccec6;
+}
+
+.navbar{
+  background-color: #ae8d7a;
+  border-bottom-color: #ae8d7a;
+}
+
+h1.nav.navbar-nav.navbar-brand{
+  color : white;
+}
+
+h1.nav.navbar-nav.navbar-brand:hover{
+  color : #eae1dc;
+}
+
+ul.nav.navbar-nav.navbar-right li a{
+  color : white;
+}
+
+ul.nav.navbar-nav.navbar-right li a:hover{
+  color : #eae1dc;
+}
+
+#addBookForm{
+  text-align: center;
+}
+
+label{
+  text-align: left;
+  width : 750px;
+  max-width : 75%;
+}
+
+#bookImg{
+  display : none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top : 10px;
+}
+
+#addBookBtn{
+  display : none;
+  margin-left: auto;
+  margin-right : auto;
+  margin-top : 10px;
+  max-width : 50%;
+  width : 250px;
+}
+
+.bookObj {
+  display : inline-block;;
+  margin-bottom : 5px;
+  width : 150px;
+  height : 225px;
+  text-align: center;
+  padding : 2.5px;
+  border : 0.5px solid rgba(0, 0, 0, 0)
+}
+
+.bookObj:hover{
+  border : 0.5px solid #a6826e
+}
+
+.bookThumb{
+  width : 128px;
+  height : 200px;
+}
+
+.bookTitle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tradeBtn{
+  width : 75%;
+  display : none;
+  position : relative;
+  bottom : 75px;
+}
+
+#usernamevar {
+  display : none;
+}
+#useremailvar{
+  display :none;
+}
+
+.tradeRequestAlert{
+  border : 1px solid #d49696;
+  border-radius: 25px;
+  background-color : #d49696;
+  width : 80%;
+  height : 50px;
+  margin-left : auto;
+  margin-right : auto;
+  margin-bottom : 17px;
+}
+
+.tradeRequestText{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color : white;
+  margin-top : 12px;
+}
+
+.tradeRequestAlert :hover{
+  color : #f0dbdb;
+}
+
+#For{
+  display : inline-block;
+  margin-right : 25px;
+  position : relative;
+  top : -125px;
+}
+
+.YourBook {
+  margin-right: 25px;
+}
+
+.TheirBooks{
+  display : inline-block;
+}

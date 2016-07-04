@@ -15,7 +15,7 @@ mongoose.connect(configDB.url, function(){
     console.log('database connected');
 });
 
-//require('./config/passport.js')(passport);
+require('./config/passport.js')(passport);
 
 app.use(bodyParser());
 app.use(morgan('dev')); // log every request to the console

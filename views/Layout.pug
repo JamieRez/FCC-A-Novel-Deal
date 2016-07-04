@@ -3,10 +3,11 @@ html
   head
     title A Novel Deal Book Trading Club
     meta(name='viewport', content='width=device-width, height = device-height , initial-scale==1')
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js")
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js', integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=', crossorigin='anonymous')
     link(rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
     link(rel='stylesheet' type="text/css" href='/main.css')
+    script(src='/main.js')
 
   body
     nav.navbar.navbar-default.navbar-static-top
@@ -19,11 +20,19 @@ html
         a(href='/')
           h1.nav.navbar-nav.navbar-brand A Novel Deal
 
-        .navbar-collapse.collapse
+        .collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
               li
                 a(href='/') View Books
               li
-                a(href='/Books') Add Book
+                if(!username)
+                  a(href='/auth/google') Add Book
+                if(username)
+                  a(href='/add') Add Book
+
               li
-                a(href='/Login') Log In
+                if(!username)
+                  a(href='/auth/google') Log In
+                if(username)
+                  a(href='/profile')= username + "'s Account"
+    block content

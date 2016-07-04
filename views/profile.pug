@@ -1,0 +1,21 @@
+extends ./layout.pug
+
+block content
+  .container
+
+    h2.bookLabel Your Books
+    each book in booksArr
+      .bookObj
+        img.bookThumb(src = book.image)
+        p.bookTitle= book.name
+
+    each trade in tradesArr
+      h2.bookLabel= trade.reqUserEmail + "'s Trade"
+      .bookObj.YourBook
+        img.bookThumb(src=trade.reqUserBookThumb)
+        p.bookTitle= trade.reqUserBookChoice
+      h3#For For
+      each book in trade.reqUserBookArr
+        .TheirBooks.bookObj
+            img.bookThumb(src = book.image)
+            p.bookTitle= book.name

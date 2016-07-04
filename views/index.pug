@@ -1,0 +1,21 @@
+extends ./layout.pug
+
+block content
+
+
+  if(tradesArr != [])
+    each trade in tradesArr
+      .tradeRequestAlert(role='button')
+        p.tradeRequestText= 'New Trade from ' + trade.reqUserEmail
+
+  .container
+
+    each book in booksArr
+      .bookObj
+        img.bookThumb(src = book.image)
+        p.bookTitle= book.name
+        if(book.userEmail != userEmail && username && userReqBooks.indexOf(book.name) == -1)
+          a.tradeBtn.btn.btn-success Send Trade
+
+  p#usernamevar= username
+  p#useremailvar= userEmail

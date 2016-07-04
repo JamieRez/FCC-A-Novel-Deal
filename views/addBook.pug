@@ -1,0 +1,9 @@
+extends ./layout.pug
+
+block content
+  .container
+    form#addBookForm
+      label Add book
+        input#bookTitle.form-control(type='text' , name='bookTitle' , placeholder = 'Of mice and men')
+    img#bookImg(src='https://books.google.com/books/content?id=v3yqHR7keCcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api')
+    p#addBookBtn.btn.btn-success.btn-large Add Book

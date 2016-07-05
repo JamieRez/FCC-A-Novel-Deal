@@ -1,0 +1,18 @@
+extends ./layout.pug
+
+block content
+
+  .container
+
+    form(action='/settings', method='post')
+      .form-group
+        label Full Name
+        input.form-control(type='text', name='fullName' , value=user.name)
+      .form-group
+        label City
+        input.form-control(type='text', name='city' , value=user.city)
+      .form-group
+        label State
+        input.form-control(type='text', name='state' , value=user.state)
+
+      button.btn.btn-success.btn-lg(type='submit') Update

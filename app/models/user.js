@@ -4,7 +4,9 @@ var userSchema = mongoose.Schema ({
   googleId : String,
   name : String,
   email : String,
-  reqBooks : Array
+  reqBooks : Array,
+  city : String,
+  state : String
 });
 
 var User = mongoose.model('User' , userSchema);

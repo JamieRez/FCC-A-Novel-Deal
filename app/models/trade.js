@@ -25,5 +25,18 @@ var deleter = function(){
   });
 }
 
+function removeTrade(reqUserEmail , resUserEmail , cb){
+  Trade.findOne({reqUserEmail : reqUserEmail , resUserEmail : resUserEmail} , function(err,trade){
+    trade.remove(function(){
+      user.User.findOne({email : reqUserEmail}, function(err,theUser){
+        theUser.reqBooks = [];
+        theUser.save(function(){
+          cb();
+        });
+      });
+    });
+  });
+}
 
-module.exports = {Trade , deleter};
+
+module.exports = {Trade , deleter , removeTrade};

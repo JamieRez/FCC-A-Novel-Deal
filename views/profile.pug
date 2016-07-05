@@ -1,7 +1,11 @@
 extends ./layout.pug
 
 block content
+
+
   .container
+    a.profileNav(href = '/logout') Log Out
+    a.profileNav(href = '/settings') Update Settings
 
     h2.bookLabel Your Books
     each book in booksArr
@@ -10,6 +14,7 @@ block content
         p.bookTitle= book.name
 
     each trade in tradesArr
+      p#usernamevar= trade.reqUserEmail
       h2.bookLabel= trade.reqUserEmail + "'s Trade"
       .bookObj.YourBook
         img.bookThumb(src=trade.reqUserBookThumb)
@@ -19,3 +24,6 @@ block content
         .TheirBooks.bookObj
             img.bookThumb(src = book.image)
             p.bookTitle= book.name
+            p#usernamevar= trade.reqUserEmail
+            a.acceptBtn.btn.btn-success Accept Book
+      h3.declineBtn.btn-danger.btn Decline Trade

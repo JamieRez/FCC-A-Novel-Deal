@@ -1,1 +1,1 @@
-My personal preference of starting a project
+See the live app at https://a-novel-deal.herokuapp.com/

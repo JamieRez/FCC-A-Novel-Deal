@@ -21,9 +21,11 @@ $(document).ready(function(){
   });
 
   $('.bookObj').hover(function(){
-    $(this).children('.tradeBtn').css('display' , 'inline-block');
+    $(this).children('.tradeBtn').css('display' , 'inline');
+    $(this).children('.acceptBtn').css('display' , 'inline');
   } , function(){
     $(this).children('.tradeBtn').css('display' , 'none');
+    $(this).children('.acceptBtn').css('display' , 'none');
   });
 
   $('.tradeBtn').click(function(){
@@ -40,5 +42,30 @@ $(document).ready(function(){
   $('.tradeRequestAlert').click(function(){
     window.location = '/profile';
   });
+
+
+  $('.declineBtn').click(function(){
+    reqUserName = $(this).parent().children('#usernamevar').text();
+    $.post('/decline' , {reqUserName : reqUserName} , function(){
+      alert('Trade from ' + reqUserName + ' declined');
+      window.location = '/profile';
+    });
+  });
+
+  $('.acceptBtn').click(function(){
+    reqUserName = $(this).parent().children('#usernamevar').text();
+    resUserBookChoice = $(this).parent().children('.bookTitle').text();
+    resUserBookThumb = $(this).parent().children('.bookThumb').attr('src');
+    $.post('accept' , {reqUserName : reqUserName , resUserBookChoice : resUserBookChoice , resUserBookThumb: resUserBookThumb} , function(){
+      alert('Trade from ' + reqUserName + ' accepted');
+      window.location = '/profile';
+    });
+  });
+
+
+
+
+
+
 
 });
